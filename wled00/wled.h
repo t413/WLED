@@ -371,7 +371,7 @@ WLED_GLOBAL float gammaCorrectVal   _INIT(2.8f);  // gamma correction value
 
 WLED_GLOBAL byte col[]    _INIT_N(({ 255, 160, 0, 0 }));  // current RGB(W) primary color. col[] should be updated if you want to change the color.
 WLED_GLOBAL byte colSec[] _INIT_N(({ 0, 0, 0, 0 }));      // current RGB(W) secondary color
-WLED_GLOBAL byte briS     _INIT(128);                     // default brightness
+WLED_GLOBAL byte briS     _INIT(DEFAULT_BRIGHTNESS);      // default brightness
 
 WLED_GLOBAL byte nightlightTargetBri _INIT(0);      // brightness after nightlight is over
 WLED_GLOBAL byte nightlightDelayMins _INIT(60);
@@ -605,10 +605,10 @@ WLED_GLOBAL byte notificationSentCallMode _INIT(CALL_MODE_INIT);
 WLED_GLOBAL uint8_t notificationCount _INIT(0);
 
 // effects
-WLED_GLOBAL byte effectCurrent _INIT(0);
-WLED_GLOBAL byte effectSpeed _INIT(128);
-WLED_GLOBAL byte effectIntensity _INIT(128);
-WLED_GLOBAL byte effectPalette _INIT(0);
+WLED_GLOBAL byte effectCurrent _INIT(DEFAULT_MODE);
+WLED_GLOBAL byte effectSpeed _INIT(DEFAULT_SPEED);
+WLED_GLOBAL byte effectIntensity _INIT(DEFAULT_INTENSITY);
+WLED_GLOBAL byte effectPalette _INIT(DEFAULT_PALETTE);
 WLED_GLOBAL bool stateChanged _INIT(false);
 
 // network

@@ -35,14 +35,27 @@
 #define USE_GET_MILLISECOND_TIMER
 #include "FastLED.h"
 
+#ifndef DEFAULT_BRIGHTNESS
 #define DEFAULT_BRIGHTNESS (uint8_t)127
+#endif
+#ifndef DEFAULT_MODE
 #define DEFAULT_MODE       (uint8_t)0
+#endif
+#ifndef DEFAULT_SPEED
 #define DEFAULT_SPEED      (uint8_t)128
+#endif
+#ifndef DEFAULT_INTENSITY
 #define DEFAULT_INTENSITY  (uint8_t)128
+#endif
+#ifndef DEFAULT_COLOR
 #define DEFAULT_COLOR      (uint32_t)0xFFAA00
+#endif
 #define DEFAULT_C1         (uint8_t)128
 #define DEFAULT_C2         (uint8_t)128
 #define DEFAULT_C3         (uint8_t)16
+#ifndef DEFAULT_PALETTE
+#define DEFAULT_PALETTE    (uint8_t)0
+#endif
 
 #ifndef MIN
 #define MIN(a,b) ((a)<(b)?(a):(b))
@@ -457,7 +470,7 @@ typedef struct Segment {
       offset(0),
       speed(DEFAULT_SPEED),
       intensity(DEFAULT_INTENSITY),
-      palette(0),
+      palette(DEFAULT_PALETTE),
       mode(DEFAULT_MODE),
       options(SELECTED | SEGMENT_ON),
       grouping(1),
